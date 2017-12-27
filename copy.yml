@@ -5,9 +5,7 @@
   tasks:
     - name: latest version of httpd and firewalld installed
       yum:
-        name:
-          - httpd
-          - firewalld
+        name: httpd
         state: latest
     
     - name: enabled and running firewalld services
