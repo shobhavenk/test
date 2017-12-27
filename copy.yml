@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  become: false
+  remote_user: root
 
   tasks:
     - name: latest version of httpd and firewalld installed
