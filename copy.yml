@@ -1,0 +1,35 @@
+---
+- name: enable intranet services
+- hosts: localhost
+  become: yes
+
+  tasks:
+    - name: latest version of httpd and firewalld installed
+      yum:
+        name:
+          - httpd
+          - firewalld
+        state: latest
+    
+    - name: enabled and running firewalld services
+      service:
+        name: firewalld
+        state: started
+        enabled: true
+    - name: permits firewall http service
+      firewalld:
+        service: http
+        permanent: true
+        state: enabled
+        immediate: yes
+    - name: httpd enabled and running
+      service:
+        name: httpd     
+        state: started
+        enabled: true
+
+    - name: test html page
+      copy:
+        content: "Welcome to the Jenkins server intranet!" 
+        dest: /var/www/html/index.html
+        
