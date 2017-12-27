@@ -1,5 +1,4 @@
 ---
-- name: enable intranet services
 - hosts: localhost
   become: yes
 
