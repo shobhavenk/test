@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  become: yes
+  become: false
 
   tasks:
     - name: latest version of httpd and firewalld installed
