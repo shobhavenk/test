@@ -5,9 +5,10 @@
   tasks:
     - name: check ping
       action: ping
-    - name: latest version of httpd and firewalld installed
+      
+    - name: update all the packages
       yum:
-        name: java
+        name: '*'
         state: latest
     
     # - name: enabled and running firewalld services
