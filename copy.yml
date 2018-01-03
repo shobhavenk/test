@@ -7,7 +7,7 @@
       action: ping
     - name: latest version of httpd and firewalld installed
       yum:
-        name: httpd
+        name: java
         state: latest
     
     # - name: enabled and running firewalld services
