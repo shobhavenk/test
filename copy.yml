@@ -20,7 +20,7 @@
       yum:
         name: '*'
         state: latest
-    
+    #testing
     # - name: enabled and running firewalld services
     #   service:
     #     name: firewalld
