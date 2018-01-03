@@ -1,4 +1,17 @@
-stage 'Checking connectivity'
+
+stage "Check syntax"
+
+node {
+    wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
+        ansiblePlaybook(
+            playbook: 'copy.yml',
+            inventory: 'inventory',
+            extras: '--syntax-check',
+            colorized: true
+            )
+    }
+}
+stage 'Checking dry run'
 
 node {
     deleteDir()
@@ -8,6 +21,7 @@ node {
         ansiblePlaybook(
             playbook: 'copy.yml',
             inventory: 'inventory',
+            extras: '--check --diff',
             colorized: true)
     }
 }
@@ -23,18 +37,6 @@ node  {
            )
     }
     
-}
-stage "Check syntax"
-
-node {
-    wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
-        ansiblePlaybook(
-            playbook: 'copy.yml',
-            inventory: 'inventory',
-            extras: '--syntax-check',
-            colorized: true
-            )
-    }
 }
 
 
