@@ -23,3 +23,16 @@ node {
             )
     }
 }
+
+stage "verbose output"
+node  {
+    wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
+        ansiblePlaybook(
+            playbook: 'copy.yml',
+            inventory: 'inventory',
+            extras: '-vvv',
+            colorized: true
+           )
+    }
+    
+}
