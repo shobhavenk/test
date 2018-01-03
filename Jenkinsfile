@@ -1,4 +1,9 @@
-
+stage "check ansible version"
+node {
+    wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
+    sh 'ansible --version'
+    }
+}
 stage "Check syntax"
 
 node {
