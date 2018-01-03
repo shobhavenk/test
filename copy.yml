@@ -6,9 +6,9 @@
     - name: check ping
       action: ping
     - name: latest version of httpd and firewalld installed
-        yum:
-          name: httpd
-          state: latest
+      yum:
+        name: httpd
+        state: latest
     
     # - name: enabled and running firewalld services
     #   service:
