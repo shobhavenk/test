@@ -7,7 +7,7 @@ node {
     wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
         ansiblePlaybook(
             playbook: 'copy.yml',
-            inventory: 'inventory'
+            inventory: 'inventory',
             colorized: true)
     }
 }
