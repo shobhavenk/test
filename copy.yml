@@ -1,11 +1,15 @@
 ---
 - hosts: localhost
   #remote_user: root
-  become: true
+  #become: true
 
   tasks:
     - name: check ping
       action: ping
+    - name: Normal Task
+      command: /usr/bin/whoami
+      register: n_task
+
     - name: Install EPEL repo.
       yum:
         name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm
