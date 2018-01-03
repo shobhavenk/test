@@ -5,7 +5,6 @@
   tasks:
     - name: check ping
       action: ping
-      +++---&&***
     # - name: latest version of httpd and firewalld installed
     #   yum:
     #     name: httpd
