@@ -17,7 +17,7 @@ node {
     wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
         ansiblePlaybook(
             playbook: 'copy.yml',
-            inventory: 'inventory.ini',
+            inventory: 'inventory',
             extras: '--syntax-check',
             colorized: true
             )
