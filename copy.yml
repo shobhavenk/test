@@ -9,7 +9,9 @@
     - name: Normal Task
       command: /usr/bin/whoami
       register: n_task
-
+    - name: display username
+      debug:
+        msg: "{{ n_task }}" 
     - name: Install EPEL repo.
       yum:
         name: https://dl.fedoraproject.org/pub/epel/epel-release-latest-{{ ansible_distribution_major_version }}.noarch.rpm
