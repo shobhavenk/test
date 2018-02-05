@@ -8,6 +8,7 @@ stage "Check syntax"
 
 node {
     wrap([$class: 'AnsiColorBuildWrapper', colorMapName: "xterm"]) {
+      git url: "https://github.com/shobha-venkatesh/test.git", branch: 'master'
         ansiblePlaybook(
             playbook: 'copy.yml',
             inventory: 'inventory',
